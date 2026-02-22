@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- GA4（計測IDはそのまま踏襲） -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ5L4JBZFH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YZ5L4JBZFH');
+
+    // クリック計測のユーティリティ
+    function track(eventName, params){ try{ gtag('event', eventName, params || {});}catch(e){} }
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3/26(木)・27(金) ドレミぱーく｜親子AIフィギュア画像プレゼント【1〜3歳】</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      line-height:1.7;background:#f7f7f7;color:#333;font-weight:400;
+    }
+    .container{max-width:880px;margin:0 auto;padding:0 24px}
+
+    /* ===== Hero ===== */
+    .header{
+      position:relative;padding:86px 0;text-align:center;color:#fff;
+      background-image:url('image/i001.jpg'); /* 任意差し替え可 */
+      background-size:cover;background-position:center;
+    }
+    .header::before{
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);z-index:1;
+    }
+    .header .container{position:relative;z-index:2}
+    .badge{
+      display:inline-block;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.5);
+      padding:8px 18px;border-radius:24px;font-size:.95rem;margin-bottom:18px
+    }
+    .main-title{font-size:3.1rem;font-weight:300;letter-spacing:.04em;margin-bottom:12px}
+    .subtitle{font-size:1.06rem;opacity:.95}
+
+    /* ===== Gift-Hero（特典をドーン） ===== */
+    .gift-hero{
+      background:#fff;border-bottom:1px solid #eee;
+    }
+    .gift-wrap{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;
+      padding:34px 0;
+    }
+    .gift-copy h2{
+      font-size:2.2rem;font-weight:600;color:#2c2c2c;line-height:1.35;margin-bottom:10px;
+    }
+    .gift-copy p{color:#555;margin-bottom:18px}
+    .gift-badges{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+    .gift-badge{
+      display:inline-block;background:#fff3cd;border:1px solid #ffe29a;color:#8a6d00;
+      padding:6px 10px;border-radius:10px;font-size:.9rem;font-weight:600;
+    }
+
+    /* ===== CTA Buttons（共通） ===== */
+    .cta-button{
+      display:inline-block;padding:16px 32px;border-radius:10px;
+      text-decoration:none;font-size:1.05rem;font-weight:700;letter-spacing:.02em;
+      transition:transform .2s ease,box-shadow .2s ease;text-align:center;
+    }
+    .cta-button:hover{transform:translateY(-2px)}
+    .cta-line{background:#06C755;color:#fff;box-shadow:0 8px 18px rgba(6,199,85,.28);}
+    .cta-outline{
+      background:#fff;color:#5C3D7F;border:2px solid #5C3D7F;box-shadow:none;
+    }
+    /* 横並び＆同幅 */
+    .gift-cta,
+    .contact-buttons-wrapper{
+      display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px;
+    }
+    .gift-cta .cta-button,
+    .contact-buttons-wrapper .cta-button{
+      flex:1 1 240px;min-width:240px;
+    }
+    @media (max-width: 560px){
+      .gift-cta .cta-button,
+      .contact-buttons-wrapper .cta-button{
+        flex:1 1 100%;min-width:0;width:100%;
+      }
+    }
+
+    .gift-hero-visual{
+      position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid #eee;
+      box-shadow:0 8px 26px rgba(0,0,0,.08);
+    }
+    .gift-hero-visual img{width:100%;height:100%;object-fit:cover}
+    .ribbon{
+      position:absolute;left:-12px;top:14px;background:#5C3D7F;color:#fff;padding:8px 16px;
+      font-weight:700;letter-spacing:.03em;border-top-right-radius:8px;border-bottom-right-radius:8px;
+      box-shadow:0 6px 14px rgba(92,61,127,.25);font-size:.95rem;
+    }
+
+    /* ===== Event Info ===== */
+    .event-section{padding:70px 0;text-align:center;background:#fcfcfc;border-bottom:1px solid #eee}
+    .section-title{font-size:2.1rem;font-weight:600;color:#2c2c2c;margin-bottom:36px}
+    .event-card{
+      background:#fff;border:1px solid #eee;border-radius:10px;padding:40px;max-width:640px;margin:0 auto;
+      box-shadow:0 8px 22px rgba(0,0,0,.06);
+    }
+    .date-highlight{font-size:1.9rem;font-weight:600;margin-bottom:18px}
+    .event-details{color:#555;line-height:1.9;margin-bottom:20px}
+    .urgency-note{
+      margin-top:10px;background:#eef9ff;border:1px solid #cfefff;padding:14px;border-radius:6px;color:#114a6b;font-weight:600
+    }
+
+    /* ===== Features ===== */
+    .features-section{padding:74px 0;background:#fff;border-bottom:1px solid #eee}
+    .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+    .feature-item{background:#fff;border:1px solid #eee;border-radius:10px;padding:26px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+    .feature-icon{width:100%;aspect-ratio:1.4/1;object-fit:cover;border-radius:8px;margin-bottom:16px}
+    .feature-title{font-size:1.28rem;font-weight:700;margin-bottom:8px}
+    .feature-description{color:#555}
+
+    /* ===== Testimonial ===== */
+    .trust-section{padding:70px 0;text-align:center;background:#fcfcfc;border-bottom:1px solid #eee}
+    .testimonial{background:#fff;border:1px solid #eee;border-radius:10px;padding:34px;max-width:680px;margin:0 auto;box-shadow:0 8px 22px rgba(0,0,0,.06)}
+    .testimonial-text{font-size:1.05rem;line-height:1.9;color:#555;margin-bottom:14px;font-style:italic}
+    .testimonial-author{color:#888;text-align:right}
+    
+    /* ===== Center Map Section (教室案内/追加) ===== */
+    .center-map-section{
+      padding: 70px 0;
+      text-align: center;
+      background: #f0fff0; /* 明るいミントグリーン系の背景 */
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .map-title{
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1e7e72; /* 濃いめのグリーン */
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .map-title::after {
+      content: '';
+      display: block;
+      width: 60%;
+      margin: 4px auto 0;
+      height: 3px;
+      background: #1e7e72;
+    }
+    .map-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      max-width: 780px;
+      margin: 40px auto 0;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 20px;
+      text-align: left;
+      box-shadow: 0 8px 22px rgba(0,0,0,.06);
+    }
+    .map-visual img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .map-details h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .detail-group {
+      margin-bottom: 16px;
+    }
+    .detail-group strong {
+      display: block;
+      font-weight: 600;
+      color: #5C3D7F;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+    .detail-group a {
+      color: #1e7e72;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .detail-group a:hover {
+      text-decoration: underline;
+    }
+    /* ===== End Center Map Section ===== */
+
+    /* ===== Final CTA ===== */
+    .final-cta{padding:80px 0;text-align:center;background:#fff}
+    .final-title{font-size:2.2rem;font-weight:700;margin-bottom:10px}
+    .final-description{color:#555;margin-bottom:26px}
+    .contact-info{
+      background:#fff;border:1px solid #eee;border-radius:10px;padding:28px;max-width:560px;margin:0 auto;
+      box-shadow:0 8px 22px rgba(0,0,0,.06)
+    }
+    .phone-number{font-size:1.8rem;font-weight:800;color:#5C3D7F;margin:8px 0 10px}
+    .contact-buttons-wrapper{margin-bottom:12px}
+
+    /* ===== 追従（Sticky）ボタン ===== */
+    .sticky-cta{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: #ffffff;
+      border-top: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 -6px 18px rgba(0,0,0,.08);
+      padding: 10px 12px env(safe-area-inset-bottom);
+      z-index: 999;
+      display: none; /* JSで表示制御 */
+    }
+    .sticky-cta .container{max-width:880px;margin:0 auto;padding:0;}
+    .sticky-cta-inner{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .sticky-btn{
+      display: inline-block;
+      text-align: center;
+      padding: 14px 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.02rem;
+    }
+    .sticky-btn--line{background:#06C755;color:#fff;box-shadow:0 8px 18px rgba(6,199,85,.25);}
+    .sticky-btn--tel{background:#fff;color:#5C3D7F;border:2px solid #5C3D7F;}
+
+    /* スマホのみ追従表示＆ボタン同幅 */
+    @media (max-width: 840px){
+      .main-title{font-size:2.4rem}
+      .gift-wrap{grid-template-columns:1fr;gap:18px}
+      .section-title{font-size:1.8rem}
+    }
+    @media (max-width: 680px) {
+      .map-card {grid-template-columns: 1fr;gap: 10px;}
+      .map-visual img {aspect-ratio: 16/9;}
+      .sticky-cta{display:block;}
+      body{padding-bottom:80px;} /* 追従とかぶらないよう下余白 */
+    }
+    @media (min-width: 681px){
+      .sticky-cta{display:none !important;}
+    }
+
+    /* subtle fade-in */
+    .fade-in{opacity:0;transform:translateY(14px);transition:all .6s ease}
+    .fade-in.visible{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="container">
+      <div class="badge">3/26(木)・3/27(金)｜各10:30–11:15（45分）</div>
+      <h1 class="main-title">ドレミぱーく</h1>
+      <p class="subtitle">歌とリズムあそびで、親子の“今だけの思い出”を。</p>
+    </div>
+  </header>
+
+  <!-- ===== Gift Hero（特典を大きく） ===== -->
+  <section class="gift-hero">
+    <div class="container gift-wrap">
+      <div class="gift-copy fade-in">
+        <h2>参加写真から作る<br>✨世界にひとつだけの“フィギュア風AI画像”を全員に🎁</h2>
+        <div class="gift-badges">
+          <span class="gift-badge">1〜3歳 親子イベント</span>
+          <span class="gift-badge">当日撮影 → 後日お渡し</span>
+          <span class="gift-badge">参加費 1組500円</span>
+        </div>
+        <p>レッスン中の親子ショットが、そのまま可愛い“箱入りフィギュア風”の記念画像に。<br>家族で何度も見返したくなる、特別な一枚をどうぞ。</p>
+        <p>※画像の受け取りには公式ライン友達登録が必要です。</p>
+
+        <!-- ▼ CTA（LINE・オンライン予約・電話）同幅 -->
+        <div class="gift-cta">
+          <a class="cta-button cta-line"
+             href="https://lin.ee/uVpVQX3"
+             target="_blank" rel="noopener"
+             onclick="track('line_click_doremi0925',{position:'gift_hero'})">💬 LINEで質問する</a>
+
+          <a class="cta-button"
+             href="https://www.toriimusic.co.jp/doremiform/"
+             target="_blank" rel="noopener"
+             onclick="track('reserve_click_doremi0925',{position:'gift_hero'})">📝 オンライン予約</a>
+
+          <a class="cta-button cta-outline"
+             href="tel:0740222063"
+             onclick="track('tel_click_doremi0925',{position:'gift_hero'})">📞 電話で申込</a>
+        </div>
+      </div>
+
+      <div class="gift-hero-visual fade-in">
+        <!-- 画像保持 -->
+        <span class="ribbon">参加特典</span>
+        <img src="image/a005.jpg" alt="フィギュア風AI画像サンプル">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Event Info ===== -->
+  <section class="event-section" id="event-info">
+    <div class="container">
+      <h2 class="section-title">開催スケジュール</h2>
+      <div class="event-card fade-in">
+        <div class="date-highlight">3月26日（木）・ 3月27日（金）</div>
+        <div class="event-details">
+          <strong>時間：</strong>各日10:30開始（45分）<br>
+          <strong>会場：</strong>ヤマハ音楽教室 大津わにセンター（JR湖西線 和邇駅前 徒歩1分）<br>
+          <strong>対象：</strong>1〜3歳のお子さまと保護者<br>
+          <strong>参加費：</strong>1組 500円
+        </div>
+        <div class="urgency-note">定員になり次第締切となります。お早めにお申込みください。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Features ===== -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">どんなことをするの？</h2>
+      <div class="features-grid">
+        <div class="feature-item fade-in">
+          <img src="image/k016.png" class="feature-icon" alt="音楽あそび">
+          <h3 class="feature-title">音楽あそびが中心</h3>
+          <p class="feature-description">歌ったり、タンブリンなどでリズムあそび。先生の生演奏といっしょに、自然と体が動き出す30分。</p>
+        </div>
+        <div class="feature-item fade-in">
+          <img src="image/e011.png" class="feature-icon" alt="親子の時間">
+          <h3 class="feature-title">親子の“できた！”を共有</h3>
+          <p class="feature-description">楽しく参加するうちに、あいさつや積極性などの小さな成長も。おうちでは見られない表情に出会えます。</p>
+        </div>
+        <div class="feature-item fade-in">
+          <img src="image/DSC_0146-2.jpg" class="feature-icon" alt="生演奏">
+          <h3 class="feature-title">ヤマハ講師の生演奏</h3>
+          <p class="feature-description">ピアノやエレクトーンのミニ演奏コーナー。季節の曲や名曲で、音の世界を間近に。</p>
+        </div>
+        <div class="feature-item fade-in">
+          <img src="image/r008-2.jpg" class="feature-icon" alt="表現力">
+          <h3 class="feature-title">表現力を引き出す</h3>
+          <p class="feature-description">ご家庭では味わえない多彩な音体験で、好奇心と表現意欲をやさしく育てます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== サンプルギャラリー（任意） ===== -->
+  <section class="gift-hero" style="border-top:1px solid #eee;">
+    <div class="container" style="padding:24px 0 36px">
+      <h2 class="section-title" style="margin-bottom:18px">特典サンプル</h2>
+      <div class="gift-wrap" style="grid-template-columns:1fr 1fr">
+        <div class="gift-hero-visual fade-in">
+          <img src="image/t015.png" alt="サンプル1">
+        </div>
+        <div class="gift-hero-visual fade-in">
+          <img src="image/Generated Image September 17, 2025 - 12_08PM.png" alt="サンプル2">
+        </div>
+        <div class="gift-hero-visual fade-in">
+          <img src="image/t016.png" alt="サンプル1">
+        </div>
+        <div class="gift-hero-visual fade-in">
+          <img src="image/r023.png" alt="サンプル1"></div>
+        <div class="gift-hero-visual fade-in">
+          <img src="image/n020.png" alt="サンプル1"></div>
+          <div class="gift-hero-visual fade-in">
+          <img src="image/o020.png" alt="サンプル1"></div>
+          <div class="gift-hero-visual fade-in">
+          <img src="image/s005.jpg" alt="サンプル1"></div>
+          <div class="gift-hero-visual fade-in">
+          <img src="image/t006.jpg" alt="サンプル1"></div>
+        </div>
+         <p>レッスン中の親子ショットが、そのまま可愛い“箱入りフィギュア風”の記念画像に。家族で何度も見返したくなる、特別な一枚をどうぞ。<br>画像はイメージです。</p>
+         <p>公式ラインの登録が必要です。システムエラーで生成できない場合がございます。予めご了承ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonial ===== -->
+  <section class="trust-section">
+    <div class="container">
+      <p style="color:#666;margin-bottom:22px">はじめての先生も、はじめてのお友達も、いっしょに音楽を楽しむ仲間です。</p>
+      <div class="testimonial fade-in">
+        <p class="testimonial-text">
+          普段は恥ずかしがり屋なのに、自分からタンブリンを取りに行けてびっくり。帰ってお父さんに報告したら、とても喜んでくれました。
+        </p>
+        <div class="testimonial-author">Ａちゃん（2歳）ママより</div>
+      </div>
+      <div class="testimonial fade-in">
+        <p class="testimonial-text">
+          人見知りが始まって心配でしたが、先生もスタッフさんもとても優しくてニコニコで参加できたのが驚きでした。
+        </p>
+        <div class="testimonial-author">Ｈちゃん（1歳）ママより</div>
+        </div>
+        <div class="testimonial fade-in">
+        <p class="testimonial-text">
+          春から幼稚園に行くのですが、その前に集団に慣れておく場所を探してたんです。ワンコインでヤマハに参加で来るのは魅力的！笑顔の写真までプレゼントがあって、主人や祖父母にも喜んでもらえて私も嬉しかったです。
+        </p>
+        <div class="testimonial-author">Gちゃん（3歳）ママより</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Center Map Section (教室案内/追加) ===== -->
+  <section class="center-map-section">
+    <div class="container">
+      <h2 class="map-title">教室のご案内</h2>
+      <div class="map-card fade-in">
+        <!-- 会場写真（保持） -->
+        <div class="map-visual">
+          <img src="image/IMG_2128.JPG" alt="ヤマハ音楽教室 大津わにセンター外観">
+        </div>
+
+        <!-- 詳細情報（保持） -->
+        <div class="map-details">
+          <h3>大津わにセンター</h3>
+
+          <div class="detail-group">
+            <strong>所在地</strong>
+            〒520-0523 滋賀県大津市和邇中浜366 今西ビル2F
+            <div>
+              <a href="https://maps.app.goo.gl/pmSvGeZ16rkDbDvi9" target="_blank" onclick="track('gmap_click_doremi0925')">
+                ▶ Googleマップで見る
+              </a>
+            </div>
+          </div>
+
+          <div class="detail-group">
+            <strong>アクセス</strong>
+            JR湖西線 和邇駅前より徒歩1分<br>
+            駐車場: あり
+          </div>
+
+          <div class="detail-group">
+            <strong>電話番号</strong>
+            0740-22-2063
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== End Center Map Section ===== -->
+
+  <!-- ===== Final CTA ===== -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="final-title">お申し込み</h2>
+      <p class="final-description">親子で秋の音あそびを楽しんだ写真が、世界にひとつの“フィギュア風AI画像”に。</p>
+      <div class="contact-info fade-in">
+        <!-- ▼ 同幅：LINE／オンライン予約／電話 -->
+        <div class="contact-buttons-wrapper">
+          <a class="cta-button cta-line"
+             href="https://lin.ee/uVpVQX3"
+             target="_blank" rel="noopener"
+             onclick="track('line_click_doremi0925',{position:'final'})">💬 LINEで問合せ</a>
+
+          <a class="cta-button"
+             href="https://www.toriimusic.co.jp/doremiform/"
+             target="_blank" rel="noopener"
+             onclick="track('reserve_click_doremi0925',{position:'final'})">📝 オンライン予約</a>
+
+          <a class="cta-button cta-outline"
+             href="tel:0740222063"
+             onclick="track('tel_click_doremi0925',{position:'final'})">📞 お電話はこちら</a>
+        </div>
+
+        <div class="phone-number">0740-22-2063</div>
+        <div class="contact-details">
+          受付時間：平日 10:30–19:30（月休）<br>
+          ヤマハ音楽教室（株式会社トリイ）<br>
+          定員になり次第締切となります。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === Sticky CTA (mobile only) === -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <div class="container">
+      <div class="sticky-cta-inner">
+        <a href="https://lin.ee/uVpVQX3" target="_blank" rel="noopener"
+           class="sticky-btn sticky-btn--line"
+           onclick="track('line_click_doremi0925',{position:'sticky'})" aria-label="LINEで質問する">
+          💬 LINEで質問
+        </a>
+        <a href="tel:0740222063"
+           class="sticky-btn sticky-btn--tel"
+           onclick="track('tel_click_doremi0925',{position:'sticky'})" aria-label="電話で問い合わせる">
+          📞 電話
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // スムース表示
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); }});
+    },{threshold:.12, rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+    // 追従ボタンの表示制御（120pxスクロールで表示）
+    (function(){
+      const sticky = document.getElementById('stickyCta');
+      if(!sticky) return;
+      let visible = false;
+      const onScroll = () => {
+        const y = window.scrollY || document.documentElement.scrollTop || 0;
+        if(y > 120 && !visible){
+          sticky.style.transform = 'translateY(0)';
+          sticky.style.opacity = '1';
+          sticky.setAttribute('aria-hidden','false');
+          visible = true;
+        }else if(y <= 120 && visible){
+          sticky.style.transform = '';
+          sticky.style.opacity = '';
+          sticky.setAttribute('aria-hidden','true');
+          visible = false;
+        }
+      };
+      sticky.style.opacity = '0';
+      sticky.style.transform = 'translateY(100%)';
+      window.addEventListener('scroll', onScroll, {passive:true});
+      window.addEventListener('load', onScroll);
+    })();
+  </script>
+</body>
+</html>
